@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether LAScii • Manifest the Sequence</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+
+  <nav>
+    <div class="nav-content">
+      <h1 class="logo">AETHER<span>LAScii</span></h1>
+      <div class="nav-links">
+        <a href="#demo">Manifest</a>
+        <a href="#showcase">Code Realms</a>
+        <a href="#" id="copy-all">Copy All</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h2 class="tagline">FORGE YOUR ALPHABET EMPIRE</h2>
+      <p class="subline">Lowercase ASCII ranges. Rendered in pure luxury.</p>
+      <div class="cta-bar">
+        <a href="#demo" class="cta-button">ENTER THE REALM</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="demo" class="demo-section">
+    <div class="demo-card">
+      <h3>Generate Sequence</h3>
+      <div class="input-group">
+        <div class="char-input">
+          <label>START</label>
+          <input type="text" id="start" maxlength="1" value="a" autocomplete="off">
+        </div>
+        <div class="arrow">→</div>
+        <div class="char-input">
+          <label>END</label>
+          <input type="text" id="end" maxlength="1" value="d" autocomplete="off">
+        </div>
+      </div>
+      <button id="generate" class="generate-btn">MANIFEST SEQUENCE</button>
+
+      <div id="result" class="result-container">
+        <div class="result-label">YOUR SEQUENCE</div>
+        <div id="array" class="array-output"></div>
+        <button id="copy-result" class="copy-btn">COPY ARRAY</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="showcase" class="showcase-section">
+    <h2 class="section-title">CODE REALMS</h2>
+    <div class="tabs">
+      <button class="tab active" data-tab="js">JavaScript</button>
+      <button class="tab" data-tab="py">Python</button>
+      <button class="tab" data-tab="java">Java</button>
+    </div>
+
+    <div id="code-js" class="code-panel active">
+      <pre><code id="js-code">function lascii(start, end) {
+    const result = [];
+    for (let i = start.charCodeAt(0); i <= end.charCodeAt(0); i++) {
+        result.push(String.fromCharCode(i));
+    }
+    return result;
+}</code></pre>
+      <button class="copy-btn copy-code" data-target="js-code">COPY JS</button>
+    </div>
+
+    <div id="code-py" class="code-panel">
+      <pre><code id="py-code">def lascii(start, end):
+    return [chr(i) for i in range(ord(start), ord(end) + 1)]</code></pre>
+      <button class="copy-btn copy-code" data-target="py-code">COPY PYTHON</button>
+    </div>
+
+    <div id="code-java" class="code-panel">
+      <pre><code id="java-code">public static List<Character> lascii(char start, char end) {
+    List<Character> result = new ArrayList<>();
+    for (char c = start; c <= end; c++) {
+        result.add(c);
+    }
+    return result;
+}</code></pre>
+      <button class="copy-btn copy-code" data-target="java-code">COPY JAVA</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>Handcrafted in pure vanilla • 2026 • No frameworks were harmed</p>
+    <p class="footer-note">Impresses companies, clients, hackers, and fellow artisans alike.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
